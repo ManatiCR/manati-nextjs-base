@@ -1,3 +1,17 @@
 {
-  "extends": ["next", "next/core-web-vitals"]
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/react-in-jsx-scope": 0,
+    "react/forbid-prop-types": 0
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  }
 }
