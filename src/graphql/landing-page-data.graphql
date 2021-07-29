@@ -1,0 +1,45 @@
+# TODO: Uncomment these fragments as soon as they're required.
+
+# fragment LinkFields on ParagraphLink {
+#   id
+#   linkURL
+#   linkTitle
+# }
+
+# fragment FileFields on ParagraphFile {
+#   id
+#   file {
+#     description
+#     fileURL
+#   }
+# }
+
+query LandingPage($path: String!) {
+  route(path: $path) {
+    title
+    ... on NodeLandingPage {
+      sections {
+        sectionId
+        variant
+        background
+        columnProportions
+        spacingTop
+        spacingBottom
+        spacingColumns
+        equalHeight
+        components {
+          uuid
+          region
+          block {
+            ... on BlockBasic {
+              body
+              title
+              headingLevel
+            }
+            # TODO: Add other block types here.
+          }
+        }
+      }
+    }
+  }
+}
